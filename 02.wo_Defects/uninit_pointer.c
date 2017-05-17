@@ -263,7 +263,8 @@ void uninit_pointer_012 ()
 	}
 	for(i=0; i<10; i++)
 	{
-		arr[i] = ++fptr[i]; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized pointer*/
+		++fptr[i];
+		arr[i] = fptr[i]; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized pointer*/
 	}
 }
 
